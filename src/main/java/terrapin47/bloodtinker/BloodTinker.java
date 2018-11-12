@@ -18,7 +18,7 @@ public class BloodTinker {
 
     public static final String MODID = "bloodtinker";
     public static final String MODNAME = "BloodTinker";
-    public static final String MODVERSION= "1.0.1";
+    public static final String MODVERSION= "1.0.2";
 
     public static boolean isConarmLoaded() {
         return Loader.isModLoaded("conarm");

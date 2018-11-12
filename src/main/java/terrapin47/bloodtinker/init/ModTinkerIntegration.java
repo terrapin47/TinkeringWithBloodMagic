@@ -5,6 +5,8 @@ import c4.conarm.lib.materials.PlatesMaterialStats;
 import c4.conarm.lib.materials.TrimMaterialStats;
 import c4.conarm.lib.materials.ArmorMaterialType;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import slimeknights.tconstruct.common.TinkerPulse;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.client.MaterialRenderInfo;
@@ -36,6 +38,10 @@ public class ModTinkerIntegration extends TinkerPulse {
         BLOOD_BRONZE_MAT.addTrait(ArmorTraitBloodstained.Get(), ArmorMaterialType.CORE);
         BLOOD_BRONZE_MAT.addTrait(ArmorTraitBloodstained.Get(), ArmorMaterialType.PLATES);
         BLOOD_BRONZE_MAT.addTrait(ArmorTraitBloodstained.Get(), ArmorMaterialType.TRIM);
+    }
+
+    @SideOnly(Side.CLIENT)
+    static public void preInitConarmModel() {
         BLOOD_BRONZE_MAT.setRenderInfo(new MaterialRenderInfo.Metal(0x8A0707, 0.25f, 0.25f, -0.1f));
     }
 
