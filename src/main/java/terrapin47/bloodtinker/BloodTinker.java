@@ -12,13 +12,13 @@ import terrapin47.bloodtinker.proxy.CommonProxy;
 
 @Mod(modid = BloodTinker.MODID, name = BloodTinker.MODNAME, version = BloodTinker.MODVERSION, useMetadata = true,
         dependencies="required-after:tconstruct;" +
-                "required-after:mantle;" +
+                "required-after:bloodmagic;" +
                 "after:conarm")
 public class BloodTinker {
 
     public static final String MODID = "bloodtinker";
     public static final String MODNAME = "BloodTinker";
-    public static final String MODVERSION= "1.0.0";
+    public static final String MODVERSION= "1.0.1";
 
     public static boolean isConarmLoaded() {
         return Loader.isModLoaded("conarm");
