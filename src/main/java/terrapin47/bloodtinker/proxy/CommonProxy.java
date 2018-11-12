@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import terrapin47.bloodtinker.BloodTinker;
 import terrapin47.bloodtinker.init.ModBlocks;
 import terrapin47.bloodtinker.init.ModFluids;
 import terrapin47.bloodtinker.init.ModItems;
@@ -19,6 +20,9 @@ public class CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         ModFluids.registerFluids();
         ModTinkerIntegration.preInit();
+        if (BloodTinker.isConarmLoaded()) {
+            ModTinkerIntegration.preInitConarm();
+        }
     }
 
     public void init(FMLInitializationEvent event) {
@@ -38,6 +42,10 @@ public class CommonProxy {
         ModItems.registerItems(event);
         ModBlocks.registerItems(event);
         ModTinkerIntegration.init();
+        if (BloodTinker.isConarmLoaded()) {
+            ModTinkerIntegration.initConarm();
+        }
+        ModTinkerIntegration.integrate();
     }
 }
 
