@@ -1,0 +1,13 @@
+{
+  "result": {
+    "item": "bloodtinker:blood_bronze_ingot",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "blockBloodBronze"
+    }
+  ],
+  "type": "forge:ore_shapeless"
+}

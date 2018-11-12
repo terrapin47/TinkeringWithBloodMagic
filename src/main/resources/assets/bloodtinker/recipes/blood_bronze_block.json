@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "bloodtinker:blood_bronze_block"
+  },
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "i": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBloodBronze"
+    }
+  }
+}

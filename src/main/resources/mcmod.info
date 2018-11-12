@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bloodtinker",
+  "name": "Tinkering With Blood Magic",
+  "description": "A Blood Magic integration for Tcon and Conarm",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/terrapin47/TinkeringWithBloodMagic",
+  "updateUrl": "",
+  "authorList": ["terrapin47", "Locien"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

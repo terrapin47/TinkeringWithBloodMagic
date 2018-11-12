@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "bloodtinker:bloody_thorn_ring"
+  },
+  "pattern": [
+    "rbr",
+    "b b",
+    "rbr"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "r": {
+      "item": "minecraft:double_plant",
+      "data": 4
+    },
+    "b": {
+      "type": "forge:ore_dict",
+      "ore": "ingotBloodBronze"
+    }
+  }
+}
