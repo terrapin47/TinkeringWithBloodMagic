@@ -5,6 +5,7 @@ import c4.conarm.lib.materials.PlatesMaterialStats;
 import c4.conarm.lib.materials.TrimMaterialStats;
 import c4.conarm.lib.materials.ArmorMaterialType;
 import net.minecraft.item.ItemStack;
+import slimeknights.tconstruct.common.TinkerPulse;
 import slimeknights.tconstruct.library.TinkerRegistry;
 import slimeknights.tconstruct.library.client.MaterialRenderInfo;
 import slimeknights.tconstruct.library.materials.BowMaterialStats;
@@ -18,7 +19,7 @@ import terrapin47.bloodtinker.bloodmagic.tool.ToolTraitSoulstealer;
 
 import static slimeknights.tconstruct.library.utils.HarvestLevels.OBSIDIAN;
 
-public class ModTinkerIntegration {
+public class ModTinkerIntegration extends TinkerPulse {
 
     public static final Material BLOOD_BRONZE_MAT = new Material("blood bronze", 0xF26263);
 
@@ -48,7 +49,9 @@ public class ModTinkerIntegration {
         TinkerRegistry.registerMelting("ingotBloodBronze", ModFluids.MOLTEN_BLOOD_BRONZE, 144);
         TinkerRegistry.registerMelting("blockBloodBronze", ModFluids.MOLTEN_BLOOD_BRONZE, 1296);
         TinkerRegistry.registerBasinCasting(new ItemStack(ModBlocks.BLOOD_BRONZE_BLOCK), ItemStack.EMPTY, ModFluids.MOLTEN_BLOOD_BRONZE, 1296);
-        TinkerRegistry.registerTableCasting(new ItemStack(ModItems.BLOOD_BRONZE_INGOT), TinkerSmeltery.castIngot, ModFluids.MOLTEN_BLOOD_BRONZE, 144);
+        if (isSmelteryLoaded()) {
+            TinkerRegistry.registerTableCasting(new ItemStack(ModItems.BLOOD_BRONZE_INGOT), TinkerSmeltery.castIngot, ModFluids.MOLTEN_BLOOD_BRONZE, 144);
+        }
     }
 
     static public void initConarm() {
