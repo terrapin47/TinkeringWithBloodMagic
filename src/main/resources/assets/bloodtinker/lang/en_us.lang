@@ -1,7 +1,7 @@
 item.bloodtinker.blood_bronze_ingot.name=Blood Bronze Ingot
 tile.bloodtinker.blood_bronze_block.name=Blood Bronze Block
 
-fluid.molten_blood_bronze=Molten Blood Bronze
+fluid.bloodbronze=Molten Blood Bronze
 
 material.bloodbronze.name=Blood Bronze
 modifier.soulstealer.name=Soulstealer

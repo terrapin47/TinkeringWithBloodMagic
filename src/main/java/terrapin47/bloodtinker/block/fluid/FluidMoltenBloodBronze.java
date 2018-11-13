@@ -9,7 +9,7 @@ import java.awt.Color;
 public class FluidMoltenBloodBronze extends Fluid {
 
     public FluidMoltenBloodBronze() {
-        super("molten_blood_bronze", new ResourceLocation(TConstruct.modID, "blocks/fluids/molten_metal"), new ResourceLocation(TConstruct.modID, "blocks/fluids/molten_metal_flow"));
+        super("bloodbronze", new ResourceLocation(TConstruct.modID, "blocks/fluids/molten_metal"), new ResourceLocation(TConstruct.modID, "blocks/fluids/molten_metal_flow"));
         this.setColor(new Color(227, 74, 89, 255));
         this.setDensity(1000);
         this.setViscosity(1000);

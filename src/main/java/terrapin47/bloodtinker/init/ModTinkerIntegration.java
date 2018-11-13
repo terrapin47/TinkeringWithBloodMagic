@@ -23,7 +23,7 @@ import static slimeknights.tconstruct.library.utils.HarvestLevels.OBSIDIAN;
 
 public class ModTinkerIntegration extends TinkerPulse {
 
-    public static final Material BLOOD_BRONZE_MAT = new Material("blood bronze", 0xF26263);
+    public static final Material BLOOD_BRONZE_MAT = new Material("bloodbronze", 0xF26263);
 
     static public void preInit() {
         BLOOD_BRONZE_MAT.addItemIngot("ingotBloodBronze");
