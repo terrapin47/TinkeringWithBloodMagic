@@ -81,19 +81,26 @@ public class ItemBloodyThornRing extends Item implements IBauble {
     @SubscribeEvent
     public static void onPlayerAttacked(LivingHurtEvent event)
     {
-        if(event.getEntityLiving() instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) event.getEntityLiving();
-            if (isWearingThornRing(player)) {
-                DamageSource damageSource = event.getSource();
-                if (damageSource.getImmediateSource() != null && damageSource.getImmediateSource() instanceof EntityLivingBase) {
-                    //Make player take one extra heart of damage when taking damage.
-                    player.setHealth(player.getHealth() - 2.0f);
-                    Entity attackingEntity = damageSource.getTrueSource();
-                    //Reflect two hearts of damage if it is a living entity
-                    EntityLivingBase livingEntity = (EntityLivingBase) attackingEntity;
-                    livingEntity.attackEntityFrom(DamageSource.causeIndirectDamage(player, livingEntity), 4.0f);
-                }
-            }
+        if(!(event.getEntityLiving() instanceof EntityPlayer)) {
+            return;
+        }
+        EntityPlayer player = (EntityPlayer) event.getEntityLiving();
+
+        if (!(isWearingThornRing(player))) {
+            return;
+        }
+
+        DamageSource damageSource = event.getSource();
+        if (damageSource.getImmediateSource() != null &&
+                damageSource.getImmediateSource() instanceof EntityLivingBase &&
+                !damageSource.getImmediateSource().isDead) {
+            //Make player take one extra heart of damage when taking damage.
+            player.setHealth(player.getHealth() - 2.0f);
+            Entity attackingEntity = damageSource.getTrueSource();
+
+            //Reflect two hearts of damage if it is a living entity
+            EntityLivingBase thornTarget = (EntityLivingBase) attackingEntity;
+            thornTarget.attackEntityFrom(DamageSource.causeThornsDamage(player), 4.0f);
         }
     }
 
