@@ -47,6 +47,9 @@ repositories {
         name = "MMD"
         url = "https://maven.mcmoddev.com/"
     }
+    maven {
+        url "http://tehnut.info/maven/"
+    }
 }
 
 dependencies {
@@ -72,10 +75,18 @@ dependencies {
     // Tinkers' Construct
     compile group: "slimeknights", name: "TConstruct", version: "${minecraft_version}-${tinkers_version}"
 
+    // Conarm
+    compile "constructs-armory:conarm:${minecraft_version}:${conarm_version}"
+
     // compile against the JEI API but do not include it at runtime
     deobfProvided "mezz.jei:jei_${minecraft_version}:${jei_version}:api"
     // at runtime, use the full JEI jar
     runtime "mezz.jei:jei_${minecraft_version}:${jei_version}"
+
+    // Blood Magic
+    deobfCompile "com.wayoftime.bloodmagic:BloodMagic:${minecraft_version}-${bloodmagic_version}"
+    // Guide API
+    deobfCompile "info.amerifrance.guideapi:Guide-API:${minecraft_root_version}-${guideapi_version}"
 
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
