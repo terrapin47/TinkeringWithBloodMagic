@@ -34,7 +34,10 @@ public class ToolTraitSoulstealer extends AbstractTrait {
             double willModifier = target instanceof EntitySlime ? 0.67 : 1;
             for (int i = 0; i <= looting; i++) {
                 if (i == 0 || target.getEntityWorld().rand.nextDouble() < 0.4) {
-                    ItemStack soulStack = soul.createWill(EnumDemonWillType.DEFAULT.ordinal(), willModifier * (target.getEntityWorld().rand.nextDouble()  * target.getMaxHealth() / 20d));
+                    ItemStack soulStack = soul.createWill(
+                            EnumDemonWillType.DEFAULT.ordinal(),
+                            willModifier * (target.getEntityWorld().rand.nextDouble()  * target.getMaxHealth() / 20d)
+                    );
                     PlayerDemonWillHandler.addDemonWill((EntityPlayer)player, soulStack);
                 }
             }

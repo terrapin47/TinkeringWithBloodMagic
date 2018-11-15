@@ -11,14 +11,17 @@ import org.apache.logging.log4j.Logger;
 import terrapin47.bloodtinker.proxy.CommonProxy;
 
 @Mod(modid = BloodTinker.MODID, name = BloodTinker.MODNAME, version = BloodTinker.MODVERSION, useMetadata = true,
-        dependencies="required-after:tconstruct;" +
-                "required-after:bloodmagic;" +
-                "after:conarm")
+        dependencies=BloodTinker.DEPENDENCIES)
 public class BloodTinker {
 
     public static final String MODID = "bloodtinker";
     public static final String MODNAME = "BloodTinker";
-    public static final String MODVERSION= "1.0.4";
+    public static final String MODVERSION= "1.0.5";
+    public static final String DEPENDENCIES =
+            "required-after:bloodmagic;" +
+            "required-after:baubles;" +
+            "required-after:tconstruct;" +
+            "after:conarm;";
 
     public static boolean isConarmLoaded() {
         return Loader.isModLoaded("conarm");
